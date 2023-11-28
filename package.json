@@ -1,0 +1,61 @@
+{
+    "name": "twilio",
+    "label": "Twilio Package",
+    "dependencies": [
+        {
+            "type": "service",
+            "name": "http",
+            "version": "v1.3.7",
+            "instanceId": "shared"
+        }
+    ],
+    "configuration": [
+        {
+            "name": "accountSid",
+            "label": "Account SID",
+            "type": "text",
+            "required": true
+        },
+        {
+            "name": "authToken",
+            "label": "Auth Token",
+            "type": "password",
+            "required": true
+        },
+        {
+            "name": "TWILIO_API_BASE_URL",
+            "label": "Twilio Api Url",
+            "type": "label",
+            "value": "https://api.twilio.com/2010-04-01"
+        }
+    ],
+    "events": [
+        {
+            "label": "Webhook",
+            "name": "webhook",
+            "description": "Event triggered when there is a webhook coming from Twilio."
+        },
+        {
+            "label": "Inbound SMS",
+            "name": "inboundSms",
+            "description": "Happens when someone sends an SMS to one of your configured phone numbers."
+        }
+    ],
+    "metadata": [
+        {
+            "type": "script",
+            "namespace": "api",
+            "path": "/scripts/api.js"
+        },
+        {
+            "type": "listener",
+            "namespace": "webhook",
+            "path": "/listeners/webhook.js"
+        },
+        {
+            "type": "flowStep",
+            "namespace": "apiCallTwilio",
+            "path": "/flowSteps/apiCallTwilio"
+        }
+    ]
+}
