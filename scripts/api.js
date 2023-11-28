@@ -261,7 +261,7 @@ function setApiUri(options) {
 
 function setRequestHeaders(options) {
     let headers = options.headers || {};
-    headers = mergeJSON(headers, {"Content-Type": "application/json"});
+    headers = mergeJSON(headers, {"Content-Type": "application/x-www-form-urlencoded"});
     options.headers = headers;
     return options;
 }
