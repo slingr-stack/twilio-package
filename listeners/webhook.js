@@ -3,7 +3,7 @@
  ****************************************************/
 
 listeners.defaultWebhookTwilio = {
-    label: 'Catch HTTP twilio events',
+    label: 'Catch HTTP Twilio events',
     type: 'service',
     options: {
         service: 'http',

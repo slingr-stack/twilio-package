@@ -6,14 +6,14 @@ This [package](https://platform-docs.slingr.io/dev-reference/data-model-and-logi
 ## Configuration
 
 #### Account SID
-A 34 character string that uniquely identifies the account. You can find it in [Twilio console](https://console.twilio.com/) once you have an account created.
+A 34-character string that uniquely identifies the account. You can find it in [Twilio console](https://console.twilio.com/) once you have an account created.
 
 **Name**: `accountSid`
 **Type**: text
 **Mandatory**: true
 
 #### Auth Token
-The authorization token for twilio accounts. You can find it in [Twilio console](https://console.twilio.com/) once you have an account created.
+The authorization token for Twilio accounts. You can find it in [Twilio console](https://console.twilio.com/) once you have an account created.
 
 **Name**: `authToken`
 **Type**: password
@@ -43,21 +43,21 @@ var response = pkg.twilio.api.post('/Accounts/{SID}/Messages.json', body)
 ```
 
 ### Send SMS helper
-The Twilio package have a specific helper to send an SMS:
+The Twilio package has a specific helper to send an SMS:
 ```javascript
 var to = "+5492615665251";
-var from = + "+17816791663";
+var from = "+17816791663";
 var body = "This is the message content!";
 var response = pkg.twilio.api.messages.sendSMS(to, from, body);
 ```
 
-Please take a look at the documentation of the [HTTP service](https://github.com/slingr-stack/http-service)
+Refer to the documentation of the [HTTP service](https://github.com/slingr-stack/http-service)
 for more information about generic requests.
 
 ## Events
 ### Webhook
 
-Incoming webhook events are automatically captured by the default listener named `Catch HTTP twilio events`, which can be found below the `Scripts` section. Alternatively, you have the option to create a new package listener. For more information, please refer to the [Listeners Documentation](https://platform-docs.slingr.io/dev-reference/data-model-and-logic/listeners/). Please take a look at the Twilio documentation of the [Webhooks](https://www.twilio.com/docs/usage/webhooks/messaging-webhooks) for more information.
+Incoming webhook events are automatically captured by the default listener named `Catch HTTP Twilio events`, which can be found below the `Scripts` section. Alternatively, you have the option to create a new package listener. For more information, please refer to the [Listeners Documentation](https://platform-docs.slingr.io/dev-reference/data-model-and-logic/listeners/). Please refer to the Twilio documentation of the [Webhooks](https://www.twilio.com/docs/usage/webhooks/messaging-webhooks) for more information.
 
 ## Dependencies
 * HTTP Service
