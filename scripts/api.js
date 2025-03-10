@@ -7,11 +7,7 @@ let httpReference = dependencies.http;
 let httpDependency = {
     get: httpReference.get,
     post: httpReference.post,
-    put: httpReference.put,
-    patch: httpReference.patch,
-    delete: httpReference.delete,
-    head: httpReference.head,
-    options: httpReference.options
+    delete: httpReference.delete
 };
 
 let httpService = {};
