@@ -18,6 +18,21 @@ A 34 character string that uniquely identifies the account. You can find it in [
 **Type**: text
 **Mandatory**: true
 
+#### Webhooks URL
+The URL to configure in webhooks of your Twilio App.
+(Take a look at the [Twilio documentation](https://www.twilio.com/docs/usage/webhooks/messaging-webhooks).)
+
+**Name**: `webhooksUrl`
+**Type**: label
+
+
+#### Twilio API URL
+The URL of the Twilio API where the requests are performed.
+(Take a look at the [Twilio documentation](https://www.twilio.com/docs/usage/webhooks/messaging-webhooks).)
+
+**Name**: `TWILIO_API_BASE_URL`
+**Type**: label
+
 # JavaScript API
 
 ## HTTP requests
@@ -33,11 +48,19 @@ The Twilio package have a specific helper to send an SMS:
 var to = "+5492615665251";
 var from = + "+17816791663";
 var body = "This is the message content!";
-var response = pkg.twilio.messages.sendSMS(to, from, body);
+var response = pkg.twilio.api.messages.sendSMS(to, from, body);
 ```
 
 Please take a look at the documentation of the [HTTP service](https://github.com/slingr-stack/http-service)
 for more information about generic requests.
+
+## Events
+### Webhook
+
+Incoming webhook events are automatically captured by the default listener named `Catch HTTP twilio events`, which can be found below the `Scripts` section. Alternatively, you have the option to create a new package listener. For more information, please refer to the [Listeners Documentation](https://platform-docs.slingr.io/dev-reference/data-model-and-logic/listeners/). Please take a look at the Twilio documentation of the [Webhooks](https://www.twilio.com/docs/usage/webhooks/messaging-webhooks) for more information.
+
+There are no events for this endpoint.
+
 
 ## Dependencies
 * HTTP Service (Latest Version)

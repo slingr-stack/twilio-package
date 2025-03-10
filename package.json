@@ -26,6 +26,13 @@
             "label": "Twilio API URL",
             "type": "label",
             "value": "https://api.twilio.com/2010-04-01"
+        },
+        {
+            "name": "webhooksUrl",
+            "label": "Webhooks URL",
+            "description": "The URL to configure in webhooks of your Twilio App",
+            "type": "label",
+            "value": "config.WEBHOOK_URL"
         }
     ],
     "events": [
@@ -33,11 +40,6 @@
             "label": "Webhook",
             "name": "webhook",
             "description": "Event triggered when there is a webhook coming from Twilio."
-        },
-        {
-            "label": "Inbound SMS",
-            "name": "inboundSms",
-            "description": "Happens when someone sends an SMS to one of your configured phone numbers."
         }
     ],
     "metadata": [
