@@ -1,12 +1,11 @@
 {
     "name": "twilio",
-    "label": "Twilio Package",
+    "label": "Twilio",
     "dependencies": [
         {
             "type": "service",
             "name": "http",
-            "version": "v1.3.7",
-            "instanceId": "shared"
+            "version": "v1.8.5"
         }
     ],
     "configuration": [
@@ -24,7 +23,7 @@
         },
         {
             "name": "TWILIO_API_BASE_URL",
-            "label": "Twilio Api Url",
+            "label": "Twilio API URL",
             "type": "label",
             "value": "https://api.twilio.com/2010-04-01"
         }
@@ -48,14 +47,14 @@
             "path": "/scripts/api.js"
         },
         {
+            "type": "script",
+            "namespace": "utils",
+            "path": "/scripts/utils.js"
+        },
+        {
             "type": "listener",
             "namespace": "webhook",
             "path": "/listeners/webhook.js"
-        },
-        {
-            "type": "flowStep",
-            "namespace": "apiCallTwilio",
-            "path": "/flowSteps/apiCallTwilio"
         }
     ]
 }
