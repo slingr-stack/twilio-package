@@ -48,7 +48,7 @@ The Twilio package has a specific helper to send an SMS:
 var to = "+5492615665251";
 var from = "+17816791663";
 var body = "This is the message content!";
-var response = pkg.twilio.api.messages.sendSMS(to, from, body);
+var response = pkg.twilio.api.sendSMS(to, from, body);
 ```
 
 Refer to the documentation of the [HTTP service](https://github.com/slingr-stack/http-service)

@@ -46,12 +46,13 @@ exports.messages = {};
  */
 
 exports.messages.sendSMS = function(to, from, body) {
-    const accountSid = pkg.twilio.utils.getConfiguration("accountSid");
-    return pkg.twilio.api.post(`/Accounts/${accountSid}/Messages.json`, {
-        To: to,
-        From: from,
-        Body: body
-    });
+    const accountSid = config.get("accountSid");
+    let options = checkHttpOptions(`/Accounts/${accountSid}/Messages.json`, { body: {
+            To: to,
+            From: from,
+            Body: body
+    }});
+    return httpService.post(Twilio(options));
 };
 
 /****************************************************
