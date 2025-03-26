@@ -34,10 +34,8 @@ for (let key in httpDependency) {
 Helpers
 ****************************************************/
 
-exports.messages = {};
-
 /**
- * Sends an HTTP GET request to the specified URL with the provided HTTP options.
+ * Sends an HTTP POST request to the specified URL with the provided HTTP options.
  *
  * @param {string} to       - The phone number the SMS is sent to.
  * @param {string} from     - The phone number the SMS is sent from.
@@ -45,7 +43,7 @@ exports.messages = {};
  * @return {object}         - The response of the POST request.
  */
 
-exports.messages.sendSMS = function(to, from, body) {
+exports.sendSMS = function(to, from, body) {
     const accountSid = config.get("accountSid");
     let options = checkHttpOptions(`/Accounts/${accountSid}/Messages.json`, { body: {
             To: to,
