@@ -42,7 +42,6 @@ Helpers
  * @param {string} body     - The actual SMS content.
  * @return {object}         - The response of the POST request.
  */
-
 exports.sendSMS = function(to, from, body) {
     const accountSid = config.get("accountSid");
     let options = checkHttpOptions(`/Accounts/${accountSid}/Messages.json`, { body: {
